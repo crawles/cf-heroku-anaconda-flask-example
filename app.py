@@ -13,11 +13,13 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == "__main__":
-    if os.environ.get('VCAP_SERVICES') is None: # running locally
-        PORT = 8080
-        DEBUG = True
-    else:                                       # running on CF
-        PORT = int(os.getenv("PORT"))
-        DEBUG = False
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+   # if os.environ.get('VCAP_SERVICES') is None: # running locally
+   #     PORT = 8080
+   #     DEBUG = True
+   # else:                                       # running on CF
+   #     PORT = int(os.getenv("PORT"))
+   #     DEBUG = False
 
-    app.run(host='0.0.0.0', port=PORT, debug=DEBUG)
+   # app.run(host='0.0.0.0', port=PORT, debug=DEBUG)
