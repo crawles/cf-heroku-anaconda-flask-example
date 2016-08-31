@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask
-import matplotlib
 import numpy as np
 import pandas as pd
 import scipy
