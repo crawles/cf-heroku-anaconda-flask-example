@@ -5,13 +5,17 @@ import matplotlib
 import numpy as np
 import pandas as pd
 import scipy
-import sklearn
+from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    data = np.array([[1,2,3,4,5,6,7,8,9],[0,0,0,0,0,1,1,1,1]])
+    df = pd.DataFrame(data.T,columns = ['x','y'])
+    cl.fit(df.x[:,None],df.y)
+    res = cl.predict_proba(df.x[:,None])
+    return 'Hello, World! {}'.format(str(res))
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
