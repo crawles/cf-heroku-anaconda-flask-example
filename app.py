@@ -12,6 +12,7 @@ app = Flask(__name__)
 def hello_world():
     data = np.array([[1,2,3,4,5,6,7,8,9],[0,0,0,0,0,1,1,1,1]])
     df = pd.DataFrame(data.T,columns = ['x','y'])
+    cl = LogisticRegression()
     cl.fit(df.x[:,None],df.y)
     res = cl.predict_proba(df.x[:,None])
     return 'Hello, World! {}'.format(str(res))
