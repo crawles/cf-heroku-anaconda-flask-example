@@ -1,6 +1,6 @@
 # cf-heroku-anaconda-flask-example
 
-Boilerplate code for pushing a Python application to Cloud Foundry or Heroku using PyData dependencies such as: 
+Boilerplate code for pushing a Python application to Cloud Foundry or Heroku. The app utilizes a Python buildpack with conda to install PyData dependencies such as: 
 * numpy
 * pandas
 * scipy
